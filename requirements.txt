@@ -1,0 +1,13 @@
+# Core dependencies
+numpy
+pandas
+scikit-learn
+tqdm
+jinja2
+
+# Optional dependencies for local inference
+transformers
+vllm
+
+# Optional dependencies for API-based inference
+openai
