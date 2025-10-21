@@ -7,6 +7,7 @@ from typing import List, Tuple
 
 from ..data import EvalResult
 
+blank_ct = 0
 
 def calculate_accuracy(results: List[EvalResult]) -> float:
     """
@@ -51,7 +52,11 @@ def calculate_f1(results: List[EvalResult]) -> float:
         if isinstance(result.answer, list):
             temp_f1 = 0.0
             for ans in result.answer:
-                temp_f1 = max(temp_f1, _calculate_single_f1(ans, result.prediction))
+                if "</think>" in result.prediction:
+                    pred_clean = result.prediction.split("</think>")[1]
+                    temp_f1 = max(temp_f1, _calculate_single_f1(ans, pred_clean))
+                else:
+                    pred_clean = result.prediction
             total_f1 += temp_f1
         else:
             total_f1 += _calculate_single_f1(result.answer, result.prediction)
@@ -95,6 +100,9 @@ def _is_answer_correct(ground_truth: str, prediction: str) -> bool:
     Returns:
         bool: True if prediction is correct, False otherwise
     """
+    # if "4,000" in ground_truth:
+    #     breakpoint()
+    global blank_ct
     if not ground_truth or not prediction:
         return False
 
@@ -102,10 +110,20 @@ def _is_answer_correct(ground_truth: str, prediction: str) -> bool:
     gt_clean = ground_truth.lower().strip()
     pred_clean = prediction.lower().strip().replace("**", "")
     pred_clean = re.sub("\*(.*?)\*", r"\1", pred_clean)
+
+    if "</think>" in pred_clean:
+        pred_clean = pred_clean.split("</think>")[1]
+    
+    else:
+        if "<think>" in pred_clean:
+            return False
     # Check exact match first
     if gt_clean == pred_clean:
         return True
 
+    if gt_clean.strip()=="":
+        breakpoint()
+        return False
     # Use regex pattern matching for partial matches
     # Escape special characters in ground truth
     # escaped_gt = re.escape(gt_clean)

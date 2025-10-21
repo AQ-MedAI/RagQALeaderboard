@@ -83,6 +83,6 @@ class PubmedQAEval(EvalBase):
             query=result.query,
             prompt=result.prompt,
             answer=result.answer,
-            prediction=prediction,
+            prediction=result.prediction,
         )
         return _is_answer_correct(modified_result.answer, modified_result.prediction)

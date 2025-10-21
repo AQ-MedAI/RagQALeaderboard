@@ -33,8 +33,8 @@ A standardized and fair evaluation framework and leaderboard for Retrieval-Augme
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo/RAGQA-Leaderboard.git
-   cd RAGQA-Leaderboard
+   git clone https://github.com/AQ-MedAI/RagQALeaderboard
+   cd RagQALeaderboard/
    ```
 
 2. Install dependencies:
