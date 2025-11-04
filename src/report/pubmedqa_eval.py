@@ -53,11 +53,11 @@ class PubmedQAEval(EvalBase):
             elif method == "f1":
                 scores["f1"] = calculate_f1(processed_results)
             elif method == "em":
-                prediction = (
-                    result.prediction.split(",")[0].strip() if result.prediction else ""
-                )
                 processed_results = []
                 for result in self.results:
+                    prediction = (
+                        result.prediction.split(",")[0].strip() if result.prediction else ""
+                    )
                     processed_result = EvalResult(
                         id=result.id,
                         query=result.query,

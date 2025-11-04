@@ -147,7 +147,7 @@ class DataPreprocessBase(ABC):
         pass
 
     @abstractmethod
-    def generate_prompt(self, query: str, docs: List[str]) -> List[Dict[str, str]]:
+    def generate_prompt(self, query: str, docs_id: List[str]) -> List[Dict[str, str]]:
         """Abstract method to generate prompt, subclasses must implement"""
         pass
 
