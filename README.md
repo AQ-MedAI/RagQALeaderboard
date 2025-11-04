@@ -72,6 +72,7 @@ pip install openai
 To evaluate a model, use the following `make` command:
 
 ```bash
+export EVAL_MODEL=<model_path> 
 make eval-all
 ```
 
@@ -80,6 +81,7 @@ This will evaluate the model for all datasets specified in the `Makefile`.
 If you want to evaluate a specific dataset, use:
 
 ```bash
+export EVAL_MODEL=<model_path>
 make eval-single DATASETS="hotpotqa popqa"
 ```
 
@@ -87,6 +89,12 @@ Alternatively, you can use the Python script directly:
 
 ```bash
 python eval.py --model-name "Qwen3" --model-path "/path/to/model" --eval-dataset hotpotqa popqa
+```
+
+if you want to run with api:
+
+```
+python eval.py --model-name <model_name> --model-path <api_url> --api-key <api_key>
 ```
 
 ### 2. Customize Configuration
@@ -97,7 +105,7 @@ You can modify the configuration files in the `config/` directory (e.g., `api_pr
 
 After evaluation, HTML reports and JSON results will be saved in the `reports/` directory.
 
-You can also run the following command to get report.
+You can also run the following command to get
 
 ```shell
 python get_report.py --result-dir <your_result_dir>

@@ -57,7 +57,7 @@ Examples:
         help="whether inference model or not",
     )
     parser.add_argument(
-        "--model-path", type=str, required=True, help="Path to the model or API key"
+        "--model-path", type=str, required=True, help="Path to the model or API url"
     )
 
     # Data configuration
