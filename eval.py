@@ -44,7 +44,7 @@ Examples:
     parser.add_argument(
         "--total_doc_number",
         type=int,
-        default=10,
+        default=30,
         help="total doc number when infering",
     )
     parser.add_argument(
