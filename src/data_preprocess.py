@@ -55,7 +55,7 @@ class PubmedQAPreprocess(DataPreprocessBase):
         super().__init__(
             prompt_config_path="config/api_prompt_config_en.json",
         )
-        self.data = self.load_data(data_path="data/pubmedqa.jsonl")
+        self.data = self.load_data(data_path="data/pubmed.jsonl")
 
     def load_data(self, data_path: str) -> List[EvalData]:
         """Load general data"""
