@@ -36,7 +36,7 @@ A standardized and fair evaluation framework and leaderboard for Retrieval-Augme
 
 ## 🚀 Download the Dataset
 Our comprehensive evaluation dataset, `RAG-QA`, is publicly available on the Hugging Face Hub.
-[![Hugging Face Datasets]](https://huggingface.co/datasets/AQ-MedAI/RAG-QA-Leaderboard)
+[![RAG-QA-Leaderboard]](https://huggingface.co/datasets/AQ-MedAI/RAG-QA-Leaderboard)
 
 ---
 
