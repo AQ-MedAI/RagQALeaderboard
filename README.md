@@ -4,6 +4,11 @@ A standardized and fair evaluation framework and leaderboard for Retrieval-Augme
 
 `RAGQA-Leaderboard` aims to provide researchers and developers with a unified and reproducible benchmark for evaluating the performance of RAG models. We have integrated a suite of popular and high-frequency question-answering datasets and offer a streamlined, one-click evaluation pipeline that generates detailed reports, making model comparison and analysis easier than ever.
 
+## 📢 Updates
+*   **[20251119]**: We have updated the evaluation results for several models on on our Hugging Face **[Check out the latest results on Hugging Face!](https://huggingface.co/datasets/AQ-MedAI/RAG-QA-Leaderboard)**
+
+---
+
 ## ✨ Key Features
 
 * **📊 Standardized Evaluation Framework**: Provides a unified and fair evaluation pipeline, ensuring that different models are compared under the same conditions for reproducible results.
@@ -26,6 +31,12 @@ A standardized and fair evaluation framework and leaderboard for Retrieval-Augme
 
   * **API-based**: Evaluate models served via API endpoints (e.g., OpenAI, Anthropic, or custom-hosted models).
   * **Local Inference**: Supports high-performance, offline evaluation of local models using libraries like **vLLM** for maximum speed and efficiency.
+
+---
+
+## 🚀 Download the Dataset
+Our comprehensive evaluation dataset, `RAG-QA`, is publicly available on the Hugging Face Hub.
+[![Hugging Face Datasets]](https://huggingface.co/datasets/AQ-MedAI/RAG-QA-Leaderboard)
 
 ---
 
